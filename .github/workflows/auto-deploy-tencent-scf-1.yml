@@ -1,6 +1,6 @@
 # https://github.com/June1991/serverless-express
 
-name: auto-deploy-tencent-scf
+name: auto-deploy-tencent-scf-1
 
 on:
   workflow_dispatch:
@@ -49,6 +49,6 @@ jobs:
         env: # 环境变量
           STAGE: dev #您的部署环境
           SERVERLESS_PLATFORM_VENDOR: tencent # serverless海外默认为aws部署，配置为腾讯部署
-          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }} # 您的腾讯云账号sercret ID
-          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }} # 您的腾讯云账号sercret key
-          Tencent_Serverless_Yml: ${{ secrets.TENCENT_SERVERLESS_YML }} # 云函数配置（区域、环境变量、触发器等）
+          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID_1 }} # 您的腾讯云账号sercret ID
+          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY_1 }} # 您的腾讯云账号sercret key
+          Tencent_Serverless_Yml: ${{ secrets.TENCENT_SERVERLESS_YML_1 }} # 云函数配置（区域、环境变量、触发器等）
