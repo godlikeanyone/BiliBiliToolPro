@@ -63,11 +63,13 @@ public static class ServiceCollectionExtension
         //bilibli
         Action<IServiceProvider, HttpClient> config = (sp, c) => {
             c.DefaultRequestHeaders.Add("User-Agent", sp.GetRequiredService<IOptionsMonitor<SecurityOptions>>().CurrentValue.UserAgent);
-            c.DefaultRequestHeaders.Add("Cookie", sp.GetRequiredService<BiliCookie>().ToString());
+            var ck = sp.GetRequiredService<BiliCookie>().ToString();
+            if(!string.IsNullOrWhiteSpace(ck)) c.DefaultRequestHeaders.Add("Cookie", ck);
         };
         Action<IServiceProvider, HttpClient> configApp = (sp, c) => {
             c.DefaultRequestHeaders.Add("User-Agent", sp.GetRequiredService<IOptionsMonitor<SecurityOptions>>().CurrentValue.UserAgentApp);
-            c.DefaultRequestHeaders.Add("Cookie", sp.GetRequiredService<BiliCookie>().ToString());
+            var ck = sp.GetRequiredService<BiliCookie>().ToString();
+            if(!string.IsNullOrWhiteSpace(ck)) c.DefaultRequestHeaders.Add("Cookie", ck);
         };
 
         services.AddBiliBiliClientApi<IUserInfoApi>(BiliHosts.Api, config);
@@ -86,7 +88,7 @@ public static class ServiceCollectionExtension
         services.AddBiliBiliClientApi<IAccountApi>(BiliHosts.Account, config);
         services.AddBiliBiliClientApi<ILiveApi>(BiliHosts.Live, config);
 
-        services.AddBiliBiliClientApi<IVipBigPointApi>(BiliHosts.Api, configApp);
+        services.AddBiliBiliClientApi<IVipBigPointApi>(BiliHosts.App, configApp);
 
 
         //qinglong
