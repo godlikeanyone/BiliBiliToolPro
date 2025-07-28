@@ -1,3 +1,4 @@
+using System.Reflection;
 using Quartz;
 using Ray.Serilog.Sinks.Batched;
 using Serilog.Context;
@@ -26,6 +27,17 @@ public abstract class BaseJob<TJob>(ILogger<TJob> logger) : IJob
             catch (Exception e)
             {
                 logger.LogError(e, e.Message);
+            }
+            finally
+            {
+                logger.LogInformation("---");
+                logger.LogInformation(
+                    "v{version} 开源 by {url}",
+                    typeof(Program)
+                        .Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                        ?.InformationalVersion,
+                    Config.Constants.SourceCodeUrl + Environment.NewLine
+                );
             }
         }
 
