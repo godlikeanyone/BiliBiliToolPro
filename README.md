@@ -49,12 +49,10 @@ BiliTool
 
 - [1. 如何使用](#1-如何使用)
     - [1.1. 部署 BiliTool](#11-部署-bilitool)
-        - [1.1.1. 方案一：免费在线容器](#111-方案一免费在线容器)
-        - [1.1.2. 方式二：青龙](#112-方式二青龙)
-        - [1.1.3. 方式三：白虎面板](#113-方式三白虎面板)
-        - [1.1.4. 方式四：Docker 或 Podman 运行](#114-方式四docker-或-podman-运行)
-        - [1.1.5. 方式五：下载程序包到本地或服务器运行](#115-方式五下载程序包到本地或服务器运行)
-        - [1.1.6. 方式六：Chart部署](#116-方式六chart部署)
+        - [1.1.1. 方式一：Docker/Podman 运行](#111-方式一dockerpodman-运行)
+        - [1.1.2. 方式二：青龙/白虎/呆呆](#112-方式二青龙白虎呆呆)
+        - [1.1.3. 方式三：下载程序包到本地或服务器运行](#113-方式三下载程序包到本地或服务器运行)
+        - [1.1.4. 方式四：Chart部署](#114-方式四chart部署)
     - [1.2. 消息推送（可选）](#12-消息推送可选)
 - [2. 功能任务说明](#2-功能任务说明)
 - [3. 个性化自定义配置](#3-个性化自定义配置)
@@ -99,29 +97,22 @@ BiliTool 实现自动完成任务的原理，是通过调用一系列开放的ap
 
 支持多种部署方式，以下选择任一适合自己的方式即可。
 
-#### 1.1.1. 方案一：免费在线容器
+#### 1.1.1. 方式一：Docker/Podman 运行
 
-有很多平台会提供一定免费额度的在线容器，基于官方镜像，部署 BiliTool 很容易。
+- [>>Docker 部署说明](platforms/docker/README.md)
+- [>>Podman 部署说明](platforms/podman/README.md)
 
-#### 1.1.2. 方式二：青龙
+#### 1.1.2. 方式二：青龙/白虎/呆呆
 
-[>>青龙部署教程](platforms/qinglong/README.md)
+- [>>青龙面板部署教程](platforms/qinglong/README.md)
+- [>>白虎面板部署教程](platforms/baihu/README.md)
+- [>>呆呆面板部署教程](platforms/daidai/README.md)
 
-#### 1.1.3. 方式三：白虎面板
-
-[>>白虎面板部署教程](platforms/baihu/README.md)
-
-#### 1.1.4. 方式四：Docker 或 Podman 运行
-
-[>>Docker 部署说明](platforms/docker/README.md)
-
-[>>Podman 部署说明](platforms/podman/README.md)
-
-#### 1.1.5. 方式五：下载程序包到本地或服务器运行
+#### 1.1.3. 方式三：下载程序包到本地或服务器运行
 
 [>>本地部署说明](docs/runInLocal.md)
 
-#### 1.1.6. 方式六：Chart部署
+#### 1.1.4. 方式四：Chart部署
 
 [>>Chart部署说明](platforms/helm/README.md)
 
